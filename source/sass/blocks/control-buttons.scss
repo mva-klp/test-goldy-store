@@ -1,0 +1,21 @@
+.control-buttons {
+  display: flex;
+}
+
+.control-button {
+  width: 54px;
+  height: 54px;
+
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid $dark;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../img/icons/arrow-left.svg");
+  cursor: pointer;
+}
+
+.control-buttons__next-button {
+  transform: rotate(180deg);
+}

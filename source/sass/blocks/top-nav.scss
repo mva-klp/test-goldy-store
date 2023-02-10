@@ -1,0 +1,104 @@
+.top-nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 1300px;
+  padding: 24px 0;
+  margin: 0 auto;
+}
+
+.top-nav__location-form {
+  margin-right: 50px;
+  padding: 10px 10px 10px 22px;
+
+  .location-form__select {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.top-nav__phone {
+  margin-right: auto;
+  padding: 10px 10px 10px 26px;
+
+  font-size: 14px;
+  line-height: 14px;
+  text-decoration: none;
+  color: $font-color;
+}
+
+.top-nav__logo {
+  width: 183px;
+  height: 52px;
+}
+
+.top-nav__auth-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.top-nav__auth-item {
+  display: block;
+  padding: 10px 10px;
+
+  font-size: 14px;
+  line-height: 14px;
+  text-decoration: none;
+  color: $font-color;
+}
+
+.auth-list__login {
+  position: relative;
+}
+
+.auth-list__login::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+
+  height: 10px;
+  width: 1px;
+
+  background-color: $dark;
+}
+
+.top-nav__user-list {
+  display: flex;
+  justify-content: space-between;
+
+  width: 116px;
+  margin-left: 72px;
+}
+
+.user-list__icon-button {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.user-list__icon-button--favorite {
+  position: relative;
+
+  .favorites-counter {
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    width: 19px;
+    height: 19px;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 19px;
+    color: #ffffff;
+    text-align: center;
+
+
+    background-color: #e46942;
+    border-radius: 50%;
+  }
+}

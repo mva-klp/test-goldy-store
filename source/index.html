@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Goldy Store</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body class="page__body">
+    <header class="page-header">
+      <div class="top-nav">
+        <div class="top-nav__wrapper">
+          <form class="location-form top-nav__location-form">
+            <label class="visually-hidden" for="location">Выбор города</label>
+            <select class="location-form__select" id="location" name="location">
+              <option value="saint-petersburg">Санкт-Петербург</option>
+              <option value="moskva">Москва</option>
+              <option value="niznii-novgorod">Нижний Новгород</option>
+              <option value="rostov-na-dony">Ростов-На-Дону</option>
+            </select>
+            <button class="visually-hidden" type="submit">Выбрать город</button>
+          </form>
+
+          <a class="phone top-nav__phone" href="tel:+78007852535">8 800 785-25-35</a>
+
+          <a class="logo top-nav__logo">
+            <img src="img/logo.svg" width="183" height="52" alt="Goldy Store">
+          </a>
+
+          <div class="top-nav__auth-list auth-list">
+            <a class="top-nav__auth-item auth-list__login" href="#">Вход</a>
+            <a class="top-nav__auth-item auth-list__signin" href="#">Регистрация</a>
+          </div>
+          <div class="top-nav__user-list user-list">
+            <a class="user-list__icon-button user-list__icon-button--favorite" href="#">
+              <span class="visually-hidden">Избранное</span>
+              <span class="favorites-counter">23</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none"><path fill="#303030" d="M9 15.5c-.54-.48-1.15-.97-1.79-1.5-2.27-1.85-4.83-3.94-5.97-6.45A6.19 6.19 0 0 1 .67 5 4.5 4.5 0 0 1 5.25.5 5.13 5.13 0 0 1 9 2.17 5.13 5.13 0 0 1 12.75.5 4.5 4.5 0 0 1 17.33 5c0 .88-.2 1.75-.57 2.55-1.14 2.51-3.7 4.6-5.96 6.45h-.01c-.64.53-1.25 1.03-1.79 1.5ZM5.25 2.17a2.95 2.95 0 0 0-2.08.82A2.79 2.79 0 0 0 2.33 5c.01.64.16 1.27.43 1.86a10.26 10.26 0 0 0 2.13 2.89 35.8 35.8 0 0 0 3.29 2.88l.14.12.68.56.01-.01h.01v-.01h.01l.02-.01.04-.03.01-.01.01-.01.56-.45.14-.12.7-.57a34.9 34.9 0 0 0 2.6-2.32c.87-.83 1.59-1.81 2.12-2.9.28-.58.43-1.22.44-1.87 0-.75-.3-1.47-.84-2a2.95 2.95 0 0 0-2.08-.83c-.95-.01-1.86.39-2.5 1.09L9 4.7 7.74 3.26a3.32 3.32 0 0 0-2.49-1.1Z"/></svg>
+            </a>
+            <a class="user-list__icon-button" href="#">
+              <span class="visually-hidden">Сравнить товары</span>
+              <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="1.1" y1="8" x2="1.1" y2="15" stroke="#303030" stroke-width="2.2"/>
+                <line x1="6.1" y1="-4.80825e-08" x2="6.1" y2="15" stroke="#303030" stroke-width="2.2"/>
+                <line x1="11.1" y1="3" x2="11.1" y2="15" stroke="#303030" stroke-width="2.2"/>
+                </svg>
+            </a>
+            <a class="user-list__icon-button" href="#">
+              <span class="visually-hidden">Перейти в корзину</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" fill="none"><rect width="16" height="13" y="4" fill="#fff" rx="1"/><mask id="a" fill="#fff"><rect width="16" height="13" y="4" rx="1"/></mask><rect width="16" height="13" y="4" stroke="#303030" stroke-width="3.2" mask="url(#a)" rx="1"/><path stroke="#303030" stroke-width="1.6" d="M4 8V5a4 4 0 0 1 8 0v3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <div class="main-nav__wrapper">
+          <!-- <button class="main-nav__toggle" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+          </button> -->
+          <ul class="main-nav__list site-list">
+            <li class="site-list__item site-list__item--current">
+              <a href="#">Каталог</a>
+            </li>
+            <li class="site-list__item">
+              <a href="#">Акции</a>
+            </li>
+            <li class="site-list__item">
+              <a href="#">Бренды</a>
+            </li>
+            <li class="site-list__item">
+              <a href="#">Магазины</a>
+            </li>
+            <li class="site-list__item">
+              <a href="#">О нас</a>
+            </li>
+            <li class="site-list__item">
+              <a href="#">Доставка и оплата</a>
+            </li>
+            <li class="site-list__item">
+              <a href="#">Статьи</a>
+            </li>
+          </ul>
+          <form class="search-form main-nav__search-form" action="https://echo.htmlacademy.ru/" method="get">
+            <label class="search-form__field">
+              <span class="visually-hidden">Поиск по сайту</span>
+              <input class="search-form__input" type="search" name="site-search" placeholder="Поиск по сайту">
+            </label>
+            <button class="visually-hidden" type="submit">Найти</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <h1 class="visually-hidden">Goldy Store - Ювелирный магазин</h1>
+
+      <section class="banner">
+        <div class="banner__wrapper slider">
+          <h2 class="visually-hidden">Наши горячие предложения</h2>
+          <ul class="banner__list slider__list">
+            <li class="banner__item slider__item">
+              <div class="banner__text">
+                <h3 class="banner__title">Суперскидка до 60%<br><b>на бриллианты</b></h3>
+                <a class="button banner__button" href="#">Подробнее</a>
+              </div>
+              <img class="banner__img" src="img/content/ring-banner.png" width="548" height="548" alt="Золотое кольцо с бриллиантами">
+            </li>
+          </ul>
+          <div class="control-buttons slider__control-buttons">
+            <button class="control-button control-buttons__prev-button" type="button">
+              <span class="visually-hidden">Пролистать назад</span>
+            </button>
+            <button class="control-button control-buttons__next-button" type="button">
+              <span class="visually-hidden">Пролистать вперед</span>
+            </button>
+          </div>
+          <div class="banner__pagination-toggles slider__toggles">
+            <button class="slider__toggle slider__toggle--current" type="button">
+              <span class="visually-hidden">1 слайд</span>
+            </button>
+            <button class="slider__toggle" type="button">
+              <span class="visually-hidden">2 слайд</span>
+            </button>
+            <button class="slider__toggle" type="button">
+              <span class="visually-hidden">3 слайд</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="popular">
+        <div class="popular__wrapper">
+          <h2 class="popular__title">Популярные категории</h2>
+          <ul class="popular__list">
+            <li class="popular__item">
+              <a class="popular__card" href="">
+								<img class="popular__img" src="img/content/popular/rings.png" width="127" height="100" alt="">
+								<h3 class="popular__card-title">Кольца</h3>
+							</a>
+            </li>
+						<li class="popular__item">
+              <a class="popular__card" href="">
+								<img class="popular__img" src="img/content/popular/earrings.png" width="102" height="130" alt="">
+								<h3 class="popular__card-title">Серьги</h3>
+							</a>
+            </li>
+						<li class="popular__item">
+              <a class="popular__card" href="">
+								<img class="popular__img" src="img/content/popular/pom-rings.png" width="117" height="93" alt="">
+								<h3 class="popular__card-title">Помолвочные кольца</h3>
+							</a>
+            </li>
+						<li class="popular__item">
+              <a class="popular__card" href="">
+								<img class="popular__img" src="img/content/popular/bracelets.png" width="141" height="118" alt="">
+								<h3 class="popular__card-title">Браслеты</h3>
+							</a>
+            </li>
+						<li class="popular__item">
+              <a class="popular__card" href="">
+								<img class="popular__img" src="img/content/popular/colie.png" width="128" height="128" alt="">
+								<h3 class="popular__card-title">Колье и подвески</h3>
+							</a>
+            </li>
+						<li class="popular__item">
+              <a class="popular__card" href="">
+								<img class="popular__img" src="img/content/popular/watches.png" width="122" height="147" alt="">
+								<h3 class="popular__card-title">Часы</h3>
+							</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+			<section class="sale">
+				<div class="sale__wraper slider">
+					<h2 class="sale__title">Распродажа</h2>
+					<ul class="sale-nav">
+						<li class="sale-nav__item">
+							<button class="sale-nav__button" type="button">Кольца</button>
+						</li>
+						<li class="sale-nav__item">
+							<button class="sale-nav__button" type="button">Серьги</button>
+						</li>
+						<li class="sale-nav__item">
+							<button class="sale-nav__button" type="button">Браслеты</button>
+						</li>
+						<li class="sale-nav__item">
+							<button class="sale-nav__button" type="button">Часы</button>
+						</li>
+					</ul>
+					<div class="control-buttons slider__control-buttons">
+            <button class="control-buttons__prev-button" type="button">
+              <span class="visually-hidden">Пролистать назад</span>
+            </button>
+            <button class="control-buttons__next-button" type="button">
+              <span class="visually-hidden">Пролистать вперед</span>
+            </button>
+          </div>
+
+					<h3 class="sale__list-title visually-hidden">Список разпродажи - кольца</h3>
+					<ul class="sale__list slider__list">
+						<li class="sale__item slider__item">
+							<div class="sale__card mini-product-card">
+
+                <div class="mini-product-card__product-lables product-lables">
+                  <ul class="product-lables__list">
+                    <li class="product-lables__item">
+                      <span class="lable lable-sale">Sale</span>
+                    </li>
+                  </ul>
+                </div>
+
+								<button class="mini-product-card__like" type="button">
+									<span class="visually-hidden">Сохранить в избранное</span>
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.94668e-08 5.39995C-0.000248434 3.95029 0.582385 2.5614 1.61681 1.54578C2.65124 0.530159 4.05058 -0.026895 5.5 -4.93311e-05C7.21732 -0.00916934 8.85599 0.719125 10 1.99995C11.144 0.719125 12.7827 -0.00916934 14.5 -4.93311e-05C15.9494 -0.026895 17.3488 0.530159 18.3832 1.54578C19.4176 2.5614 20.0002 3.95029 20 5.39995C20 10.756 13.621 14.8 10 18C6.387 14.773 7.94668e-08 10.76 7.94668e-08 5.39995Z" fill="#C9C9C9"/>
+                    </svg>
+								</button>
+								<button class="mini-product-card__eyes" type="button">
+									<span class="visually-hidden">Добавить в сравнение</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0044 1.5C11.0044 0.947715 10.5567 0.5 10.0044 0.5C9.45211 0.5 9.00439 0.947715 9.00439 1.5V3.54989C8.04476 3.64609 7.12848 3.87731 6.27405 4.20772L5.4446 3.05037C5.12289 2.60146 4.49817 2.49836 4.04927 2.82007C3.60036 3.14179 3.49726 3.76651 3.81898 4.21541L4.45792 5.10695C3.92702 5.43178 3.434 5.79271 2.98539 6.17708C1.24791 7.6658 0 9.66836 0 11.5C0 13.3316 1.24791 15.3342 2.98539 16.8229C4.76222 18.3453 7.23586 19.5 10 19.5C12.7639 19.5 15.2376 18.3462 17.0145 16.8241C18.7522 15.3355 20 13.333 20 11.5C20 9.66702 18.7522 7.66444 17.0145 6.17591C16.6848 5.89346 16.331 5.62368 15.9559 5.37161L16.6253 4.43759C16.947 3.98869 16.844 3.36398 16.3951 3.04225C15.9462 2.72053 15.3214 2.82362 14.9997 3.27252L14.1918 4.39975C13.2102 3.96793 12.1376 3.66528 11.0044 3.55075V1.5ZM10 7.5C7.79086 7.5 6 9.29086 6 11.5C6 13.7091 7.79086 15.5 10 15.5C12.2091 15.5 14 13.7091 14 11.5C14 9.29086 12.2091 7.5 10 7.5Z" fill="#C9C9C9"/>
+                    </svg>
+								</button>
+
+                <div class="mini-product-card__product-image product-image slider">
+                  <span class="visually-hidden">Изображения товара</span>
+                  <ul class="product-image__list slider-list">
+                    <li class="product-image__item slider-item">
+                      <img src="img/content/rings/ring-1.jpg" width="200" height="200" alt="">
+                    </li>
+                  </ul>
+
+                  <p class="product-image__toggles slider__toggles">
+                    <button class="slider__toggle slider__toggle--current" type="button">
+                      <span class="visually-hidden">1 слайд</span>
+                    </button>
+                    <button class="slider__toggle" type="button">
+                      <span class="visually-hidden">2 слайд</span>
+                    </button>
+                    <button class="slider__toggle" type="button">
+                      <span class="visually-hidden">3 слайд</span>
+                    </button>
+                  </p>
+                </div>
+
+                <p class="mini-product-card__product-prices product-prices">
+                  <span class="product-prices__price product-prices__price--mini">41 000 ₽</span>
+								  <span class="product-prices__old-price product-prices__old-price--mini">65 000 ₽</span>
+                  <span class="product-prices__discount product-prices__discount--mini">-45%</span>
+                </p>
+                <a class="mini-product-card__link" href="#">
+                  <h4 class="mini-product-card__product-title product-title">Стильное кольцо из белого золота c бриллиантами</h4>
+                </a>
+							</div>
+						</li>
+
+            <li class="sale__item slider__item">
+							<div class="sale__card mini-product-card">
+
+								<button class="mini-product-card__like" type="button">
+									<span class="visually-hidden">Сохранить в избранное</span>
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.94668e-08 5.39995C-0.000248434 3.95029 0.582385 2.5614 1.61681 1.54578C2.65124 0.530159 4.05058 -0.026895 5.5 -4.93311e-05C7.21732 -0.00916934 8.85599 0.719125 10 1.99995C11.144 0.719125 12.7827 -0.00916934 14.5 -4.93311e-05C15.9494 -0.026895 17.3488 0.530159 18.3832 1.54578C19.4176 2.5614 20.0002 3.95029 20 5.39995C20 10.756 13.621 14.8 10 18C6.387 14.773 7.94668e-08 10.76 7.94668e-08 5.39995Z" fill="#C9C9C9"/>
+                    </svg>
+								</button>
+								<button class="mini-product-card__eyes" type="button">
+									<span class="visually-hidden">Добавить в сравнение</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0044 1.5C11.0044 0.947715 10.5567 0.5 10.0044 0.5C9.45211 0.5 9.00439 0.947715 9.00439 1.5V3.54989C8.04476 3.64609 7.12848 3.87731 6.27405 4.20772L5.4446 3.05037C5.12289 2.60146 4.49817 2.49836 4.04927 2.82007C3.60036 3.14179 3.49726 3.76651 3.81898 4.21541L4.45792 5.10695C3.92702 5.43178 3.434 5.79271 2.98539 6.17708C1.24791 7.6658 0 9.66836 0 11.5C0 13.3316 1.24791 15.3342 2.98539 16.8229C4.76222 18.3453 7.23586 19.5 10 19.5C12.7639 19.5 15.2376 18.3462 17.0145 16.8241C18.7522 15.3355 20 13.333 20 11.5C20 9.66702 18.7522 7.66444 17.0145 6.17591C16.6848 5.89346 16.331 5.62368 15.9559 5.37161L16.6253 4.43759C16.947 3.98869 16.844 3.36398 16.3951 3.04225C15.9462 2.72053 15.3214 2.82362 14.9997 3.27252L14.1918 4.39975C13.2102 3.96793 12.1376 3.66528 11.0044 3.55075V1.5ZM10 7.5C7.79086 7.5 6 9.29086 6 11.5C6 13.7091 7.79086 15.5 10 15.5C12.2091 15.5 14 13.7091 14 11.5C14 9.29086 12.2091 7.5 10 7.5Z" fill="#C9C9C9"/>
+                    </svg>
+								</button>
+
+                <div class="mini-product-card__product-image product-image slider">
+                  <span class="visually-hidden">Изображения товара</span>
+                  <ul class="product-image__list slider-list">
+                    <li class="product-image__item slider-item">
+                      <img src="img/content/rings/ring-2.jpg" width="200" height="200" alt="">
+                    </li>
+                  </ul>
+
+                  <p class="product-image__toggles slider__toggles">
+                    <button class="slider__toggle slider__toggle--current" type="button">
+                      <span class="visually-hidden">1 слайд</span>
+                    </button>
+                    <button class="slider__toggle" type="button">
+                      <span class="visually-hidden">2 слайд</span>
+                    </button>
+                    <button class="slider__toggle" type="button">
+                      <span class="visually-hidden">3 слайд</span>
+                    </button>
+                  </p>
+                </div>
+
+                <p class="mini-product-card__product-prices product-prices">
+                  <span class="product-prices__price product-prices__price--mini">56 000 ₽</span>
+                </p>
+
+								<a class="mini-product-card__link" href="#">
+                  <h4 class="mini-product-card__product-title product-title">Стильное кольцо из белого золота c бриллиантами</h4>
+                </a>
+							</div>
+						</li>
+
+            <li class="sale__item slider__item">
+							<div class="sale__card mini-product-card">
+
+								<button class="mini-product-card__like" type="button">
+									<span class="visually-hidden">Сохранить в избранное</span>
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.94668e-08 5.39995C-0.000248434 3.95029 0.582385 2.5614 1.61681 1.54578C2.65124 0.530159 4.05058 -0.026895 5.5 -4.93311e-05C7.21732 -0.00916934 8.85599 0.719125 10 1.99995C11.144 0.719125 12.7827 -0.00916934 14.5 -4.93311e-05C15.9494 -0.026895 17.3488 0.530159 18.3832 1.54578C19.4176 2.5614 20.0002 3.95029 20 5.39995C20 10.756 13.621 14.8 10 18C6.387 14.773 7.94668e-08 10.76 7.94668e-08 5.39995Z" fill="#C9C9C9"/>
+                    </svg>
+								</button>
+								<button class="mini-product-card__eyes" type="button">
+									<span class="visually-hidden">Добавить в сравнение</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0044 1.5C11.0044 0.947715 10.5567 0.5 10.0044 0.5C9.45211 0.5 9.00439 0.947715 9.00439 1.5V3.54989C8.04476 3.64609 7.12848 3.87731 6.27405 4.20772L5.4446 3.05037C5.12289 2.60146 4.49817 2.49836 4.04927 2.82007C3.60036 3.14179 3.49726 3.76651 3.81898 4.21541L4.45792 5.10695C3.92702 5.43178 3.434 5.79271 2.98539 6.17708C1.24791 7.6658 0 9.66836 0 11.5C0 13.3316 1.24791 15.3342 2.98539 16.8229C4.76222 18.3453 7.23586 19.5 10 19.5C12.7639 19.5 15.2376 18.3462 17.0145 16.8241C18.7522 15.3355 20 13.333 20 11.5C20 9.66702 18.7522 7.66444 17.0145 6.17591C16.6848 5.89346 16.331 5.62368 15.9559 5.37161L16.6253 4.43759C16.947 3.98869 16.844 3.36398 16.3951 3.04225C15.9462 2.72053 15.3214 2.82362 14.9997 3.27252L14.1918 4.39975C13.2102 3.96793 12.1376 3.66528 11.0044 3.55075V1.5ZM10 7.5C7.79086 7.5 6 9.29086 6 11.5C6 13.7091 7.79086 15.5 10 15.5C12.2091 15.5 14 13.7091 14 11.5C14 9.29086 12.2091 7.5 10 7.5Z" fill="#C9C9C9"/>
+                    </svg>
+								</button>
+
+                <div class="mini-product-card__product-image product-image slider">
+                  <span class="visually-hidden">Изображения товара</span>
+                  <ul class="product-image__list slider-list">
+                    <li class="product-image__item slider-item">
+                      <img src="img/content/rings/ring-3.jpg" width="200" height="200" alt="">
+                    </li>
+                  </ul>
+
+                  <p class="product-image__toggles slider__toggles">
+                    <button class="slider__toggle slider__toggle--current" type="button">
+                      <span class="visually-hidden">1 слайд</span>
+                    </button>
+                    <button class="slider__toggle" type="button">
+                      <span class="visually-hidden">2 слайд</span>
+                    </button>
+                    <button class="slider__toggle" type="button">
+                      <span class="visually-hidden">3 слайд</span>
+                    </button>
+                  </p>
+                </div>
+
+                <p class="mini-product-card__product-prices product-prices">
+                  <span class="product-prices__price product-prices__price--mini">37 500 ₽</span>
+                </p>
+
+								<a class="mini-product-card__link" href="#">
+                  <h4 class="mini-product-card__product-title product-title">Стильное кольцо из белого золота c бриллиантами</h4>
+                </a>
+							</div>
+						</li>
+
+            <li class="sale__item slider__item">
+							<div class="sale__card mini-product-card">
+
+								<button class="mini-product-card__like" type="button">
+									<span class="visually-hidden">Сохранить в избранное</span>
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.94668e-08 5.39995C-0.000248434 3.95029 0.582385 2.5614 1.61681 1.54578C2.65124 0.530159 4.05058 -0.026895 5.5 -4.93311e-05C7.21732 -0.00916934 8.85599 0.719125 10 1.99995C11.144 0.719125 12.7827 -0.00916934 14.5 -4.93311e-05C15.9494 -0.026895 17.3488 0.530159 18.3832 1.54578C19.4176 2.5614 20.0002 3.95029 20 5.39995C20 10.756 13.621 14.8 10 18C6.387 14.773 7.94668e-08 10.76 7.94668e-08 5.39995Z" fill="#C9C9C9"/>
+                    </svg>
+								</button>
+								<button class="mini-product-card__eyes" type="button">
+									<span class="visually-hidden">Добавить в сравнение</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0044 1.5C11.0044 0.947715 10.5567 0.5 10.0044 0.5C9.45211 0.5 9.00439 0.947715 9.00439 1.5V3.54989C8.04476 3.64609 7.12848 3.87731 6.27405 4.20772L5.4446 3.05037C5.12289 2.60146 4.49817 2.49836 4.04927 2.82007C3.60036 3.14179 3.49726 3.76651 3.81898 4.21541L4.45792 5.10695C3.92702 5.43178 3.434 5.79271 2.98539 6.17708C1.24791 7.6658 0 9.66836 0 11.5C0 13.3316 1.24791 15.3342 2.98539 16.8229C4.76222 18.3453 7.23586 19.5 10 19.5C12.7639 19.5 15.2376 18.3462 17.0145 16.8241C18.7522 15.3355 20 13.333 20 11.5C20 9.66702 18.7522 7.66444 17.0145 6.17591C16.6848 5.89346 16.331 5.62368 15.9559 5.37161L16.6253 4.43759C16.947 3.98869 16.844 3.36398 16.3951 3.04225C15.9462 2.72053 15.3214 2.82362 14.9997 3.27252L14.1918 4.39975C13.2102 3.96793 12.1376 3.66528 11.0044 3.55075V1.5ZM10 7.5C7.79086 7.5 6 9.29086 6 11.5C6 13.7091 7.79086 15.5 10 15.5C12.2091 15.5 14 13.7091 14 11.5C14 9.29086 12.2091 7.5 10 7.5Z" fill="#C9C9C9"/>
+                    </svg>
+								</button>
+
+                <div class="mini-product-card__product-image product-image slider">
+                  <span class="visually-hidden">Изображения товара</span>
+                  <ul class="product-image__list slider-list">
+                    <li class="product-image__item slider-item">
+                      <img src="img/content/rings/ring-1.jpg" width="200" height="200" alt="">
+                    </li>
+                  </ul>
+
+                  <p class="product-image__toggles slider__toggles">
+                    <button class="slider__toggle slider__toggle--current" type="button">
+                      <span class="visually-hidden">1 слайд</span>
+                    </button>
+                    <button class="slider__toggle" type="button">
+                      <span class="visually-hidden">2 слайд</span>
+                    </button>
+                    <button class="slider__toggle" type="button">
+                      <span class="visually-hidden">3 слайд</span>
+                    </button>
+                  </p>
+                </div>
+
+                <p class="mini-product-card__product-prices product-prices">
+                  <span class="product-prices__price product-prices__price--mini">39 200 ₽</span>
+                </p>
+
+								<a class="mini-product-card__link" href="#">
+                  <h4 class="mini-product-card__product-title product-title">Стильное кольцо из белого золота c бриллиантами</h4>
+                </a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="stock">
+				<div class="stock__wrapper">
+          <h2 class="visually-hidden">Скидки и акции</h2>
+					<ul class="stock__list">
+						<li class="stock__item">
+							<a class="stock-card">
+								<h3 class="stock-card__title">Скидки на все украшения с бриллиантами</h3>
+								<span class="stock-card__discount">До <strong class="discount-count">-50%</strong></span>
+								<img class="stock-card__img" src="img/content/stock/stock-1.png" width="156" height="290" alt="">
+							</a>
+						</li>
+						<li class="stock__item">
+							<a class="stock-card">
+								<h3 class="stock-card__title">Скидки на кольца и браслеты</h3>
+								<span class="stock-card__discount">До <strong class="discount-count">-40%</strong></span>
+								<img class="stock-card__img" src="img/content/stock/stock-2.png" width="229" height="290" alt="">
+							</a>
+						</li>
+						<li class="stock__item">
+							<a class="stock-card">
+								<h3 class="stock-card__title">Снижение цен на обручальные кольца</h3>
+								<span class="stock-card__discount">До <strong class="discount-count">-60%</strong></span>
+								<img class="stock-card__img" src="img/content/stock/stock-3.png" width="220" height="249" alt="">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="day-products">
+				<div class="day-products__wraper slider">
+					<h2 class="day-products__title">Товар дня</h2>
+
+					<div class="control-buttons slider__control-buttons">
+            <button class="control-buttons__prev-button" type="button">
+              <span class="visually-hidden">Пролистать назад</span>
+            </button>
+            <button class="control-buttons__next-button" type="button">
+              <span class="visually-hidden">Пролистать вперед</span>
+            </button>
+          </div>
+
+					<ul class="day-products__list slider__list">
+						<li class="day-products__item slider__item">
+							<div class="product-card">
+
+                <div class="product-card__gallery slider">
+
+                  <div class="product-card__product-lables product-lables">
+                    <ul class="product-lables__list">
+                      <li class="product-lables__item">
+                        <span class="lable lable-new">New</span>
+                      </li>
+                      <li class="product-lables__item">
+                        <span class="lable lable-hit">Хит</span>
+                      </li>
+                      <li class="product-lables__item">
+                        <span class="lable lable-sale">Sale</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="product-card__product-image product-image slider">
+                    <span class="visually-hidden">Изображения товара</span>
+                    <ul class="product-image__list slider-list">
+                      <li class="product-image__item slider-item">
+                        <img src="img/content/rings/ring-1.jpg" width="200" height="200" alt="">
+                      </li>
+                    </ul>
+
+                    <div class="product-image__control-buttons slider__control-buttons">
+                      <button class="product-image__prev-button" type="button">
+                        <span class="visually-hidden">Предыдущее изображение</span>
+                      </button>
+                      <button class="product-image__next-button" type="button">
+                        <span class="visually-hidden">Следующее изображение</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card__content">
+                  <p class="product-card__stars">
+                    <span class="visually-hidden">4 звезды</span>
+                  </p>
+                  <p class="product-card__raiting">
+                    <span class="visually-hidden">Рейтинг <span class="product-card__raiting-count">4,2</span></span>
+                  </p>
+                  <h3 class="product-card__title">Кольцо из золота с бриллиантами</h3>
+                  <p class="product-card__vendor">Артикул: <span class="product-card__vendor-code">1012076</span></p>
+                  <p class="product-card__product-prices product-prices">
+                    <span class="product-prices__price">41 000 ₽</span>
+                    <span class="product-prices__old-price">65 000 ₽</span>
+                    <span class="product-prices__discount">-45%</span>
+                  </p>
+                  <div class="product-card__sale-counter">
+
+                  </div>
+                  <p class="product-card__colors-title">Цвет</p>
+                  <p class="product-card__colors">
+                    <button class="product-card__colors-button product-card__colors-button--white" type="button">
+                      <span class="visually-hidden">Белое золото</span>
+                    </button>
+                    <button class="product-card__colors-button product-card__colors-button--yellow" type="button">
+                      <span class="visually-hidden">Желтое золото</span>
+                    </button>
+                    <button class="product-card__colors-button product-card__colors-button--red" type="button">
+                      <span class="visually-hidden">Красное золото</span>
+                    </button>
+                    <button class="product-card__colors-button product-card__colors-button--platina" type="button">
+                      <span class="visually-hidden">Платина</span>
+                    </button>
+                  </p>
+                  <p class="product-card__size-title">Размер
+                    <span class="product-card__size-info-icon">
+                      <span class="product-card__info-text">Также как существующая теория напрямую зависит от экономической целесообразности принимаемых решений.</span>
+                    </span>
+                  </p>
+                  <p class="product-card__size-list">
+                    <button class="product-card__size-button product-card__size-button--current" type="button">16,5</button>
+                    <button class="product-card__size-button" type="button">17,5</button>
+                    <button class="product-card__size-button" type="button">18,5</button>
+                    <button class="product-card__size-button" type="button">19</button>
+                    <button class="product-card__size-button" type="button">19,5</button>
+                    <button class="product-card__size-button" type="button">19,5</button>
+                    <button class="product-card__size-button" type="button">18,5</button>
+                    <button class="product-card__size-button" type="button">19</button>
+                    <button class="product-card__size-button" type="button" disabled>19,5</button>
+                    <button class="product-card__size-button" type="button" disabled>19,5</button>
+                  </p>
+                  <a class="product-card__to-cart button">В корзину</a>
+                  <a class="product-card__one-click button">Купить в 1 клик</a>
+                  <div class="product-card__advantages">
+                    <button class="product-card__like" type="button">
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94668e-08 5.39995C-0.000248434 3.95029 0.582385 2.5614 1.61681 1.54578C2.65124 0.530159 4.05058 -0.026895 5.5 -4.93311e-05C7.21732 -0.00916934 8.85599 0.719125 10 1.99995C11.144 0.719125 12.7827 -0.00916934 14.5 -4.93311e-05C15.9494 -0.026895 17.3488 0.530159 18.3832 1.54578C19.4176 2.5614 20.0002 3.95029 20 5.39995C20 10.756 13.621 14.8 10 18C6.387 14.773 7.94668e-08 10.76 7.94668e-08 5.39995Z" fill="#C9C9C9"/>
+                        </svg>Сохранить
+                    </button>
+                    <button class="product-card__compare" type="button">
+                      <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="1.1" y1="8" x2="1.1" y2="15" stroke="#303030" stroke-width="2.2"/>
+                        <line x1="6.1" y1="-4.80825e-08" x2="6.1" y2="15" stroke="#303030" stroke-width="2.2"/>
+                        <line x1="11.1" y1="3" x2="11.1" y2="15" stroke="#303030" stroke-width="2.2"/>
+                        </svg>Сравнить
+                    </button>
+                    <button class="product-card__share" type="button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="none"><path fill="#C9C9C9" fill-rule="evenodd" d="M9.67 3.58a2.92 2.92 0 1 1 .83 2.05L6.23 8.22a2.92 2.92 0 0 1 .02 1.48l4.35 2.58a2.92 2.92 0 1 1-.85 1.43L5.4 11.14A2.9 2.9 0 0 1 .5 9a2.92 2.92 0 0 1 4.84-2.2l4.38-2.65a2.93 2.93 0 0 1-.05-.57Zm2.91-1.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5ZM3.42 7.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm9.16 5.42a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z" clip-rule="evenodd"/></svg>Поделиться
+                    </button>
+                  </div>
+                </div>
+              </div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+      <section class="articles">
+        <div class="articles__wrapper">
+          <h2 class="articles__title">Статьи</h2>
+          <ul class="articles__list">
+            <li class="articles__item">
+              <a class="articles__link">
+                <img class="articles__img" src="img/content/articles/article-1.jpg" width="310" height="383" alt="">
+                <time class="articles__date" datetime="2021-09-21">21 сентября 2021</time>
+                <h3 class="articles__title">Обручальные кольца: тренды 2021</h3>
+              </a>
+            </li>
+            <li class="articles__item">
+              <a class="articles__link">
+                <img class="articles__img" src="img/content/articles/article-2.jpg" width="310" height="383" alt="">
+                <time class="articles__date" datetime="2021-09-25">25 сентября 2021</time>
+                <h3 class="articles__title">Главные ювелирные тренды года</h3>
+              </a>
+            </li>
+            <li class="articles__item">
+              <a class="articles__link">
+                <img class="articles__img" src="img/content/articles/article-3.jpg" width="310" height="383" alt="">
+                <time class="articles__date" datetime="2021-09-21">21 сентября 2021</time>
+                <h3 class="articles__title">Жемчуг: 7 малоизвестных фактов о культовом украшении</h3>
+              </a>
+            </li>
+            <li class="articles__item">
+              <a class="articles__link">
+                <img class="articles__img" src="img/content/articles/article-4.jpg" width="310" height="383" alt="">
+                <time class="articles__date" datetime="2021-09-21">21 сентября 2021</time>
+                <h3 class="articles__title">Как отличить золото от подделки: 10 практических советов</h3>
+              </a>
+            </li>
+          </ul>
+          <a class="articles__to-all" href="#">Показать все</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page__footer">
+    </footer>
+  </body>
+
+</html>
